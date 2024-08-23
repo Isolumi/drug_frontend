@@ -13,6 +13,7 @@ import ListItemText from "@mui/material/ListItemText";
 import AccountCircle from "@mui/icons-material/AccountCircle";
 
 const drawerWidth = 240;
+const users = ["you", "me", "them"];
 
 export default function ClippedDrawer() {
 	return (
@@ -20,7 +21,7 @@ export default function ClippedDrawer() {
 			<CssBaseline />
 			<AppBar
 				position="fixed"
-				sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}
+				sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 , backgroundColor : "#c77e30"}}
 			>
 				<Toolbar>
 					<Typography variant="h6" noWrap component="div">
@@ -36,23 +37,24 @@ export default function ClippedDrawer() {
 					[`& .MuiDrawer-paper`]: {
 						width: drawerWidth,
 						boxSizing: "border-box",
+						backgroundColor: "#363c40",
 					},
 				}}
 			>
 				<Toolbar />
-				<Box sx={{ overflow: "auto" }}>
-					<Typography variant="h6" component="div" sx={{ p: 2 }}>
+				<Box sx={{ overflow: "auto" , backgroundColor: '#363c40' }}>
+					<Typography variant="h6" component="div" sx={{ p: 2, color: "#ccd5db" }}>
 						Users
 					</Typography>
 					<Divider />
 					<List>
-						{["All mail", "Trash", "Spam"].map((text) => (
+						{users.map((text) => (
 							<ListItem key={text} disablePadding>
 								<ListItemButton>
 									<ListItemIcon>
-										<AccountCircle />
+										<AccountCircle sx={{color: "#ccd5db"}}/>
 									</ListItemIcon>
-									<ListItemText primary={text} />
+									<ListItemText primary={text} sx={{ color: "#ccd5db"}} />
 								</ListItemButton>
 							</ListItem>
 						))}
