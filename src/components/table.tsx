@@ -4,6 +4,7 @@ import TableCell from "@mui/material/TableCell";
 import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
+import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 
 function createData(
@@ -42,20 +43,20 @@ export default function BasicTable() {
 				<Table sx={{ maxWidth: `calc(100vw - 240px)` }}>
 					<TableHead>
 						<TableRow>
-							<TableCell sx={{ color: "#ccd5db", borderBottom: '5px solid #242424' }}>
+							<TableCell sx={{ color: "#ccd5db", borderBottom: '5px solid #242424', fontSize: '1.2rem' }}>
 								dwug omnomnomonmonmonmonmomnn
 							</TableCell>
-							<TableCell align="right" sx={{ color: "#ccd5db", borderBottom: '5px solid #242424' }}>
-								Calories
+							<TableCell align="right" sx={{ color: "#ccd5db", borderBottom: '5px solid #242424', fontSize: '1.2rem' }}>
+								Fill Date
 							</TableCell>
-							<TableCell align="right" sx={{ color: "#ccd5db", borderBottom: '5px solid #242424' }}>
-								Fat&nbsp;(g)
+							<TableCell align="right" sx={{ color: "#ccd5db", borderBottom: '5px solid #242424', fontSize: '1.2rem' }}>
+								Remaining Duration
 							</TableCell>
-							<TableCell align="right" sx={{ color: "#ccd5db", borderBottom: '5px solid #242424' }}>
-								Carbs&nbsp;(g)
+							<TableCell align="right" sx={{ color: "#ccd5db", borderBottom: '5px solid #242424', fontSize: '1.2rem' }}>
+								Refill Date
 							</TableCell>
-							<TableCell align="right" sx={{ color: "#ccd5db", borderBottom: '5px solid #242424' }}>
-								Protein&nbsp;(g)
+							<TableCell align="right" sx={{ color: "#ccd5db", borderBottom: '5px solid #242424', fontSize: '1.2rem' }}>
+								
 							</TableCell>
 						</TableRow>
 					</TableHead>
@@ -96,9 +97,11 @@ export default function BasicTable() {
 								</TableCell>
 								<TableCell
 									align="right"
-									sx={{ color: "#ccd5db", borderBottom: '5px solid #242424' }}
+									sx={{ color: "#ccd5db", borderBottom: '5px solid #242424', fontSize: '1.2rem' }}
 								>
-									{row.protein}
+									<Button sx={{color: '#ccd5db'}}>
+										Refill
+									</Button>
 								</TableCell>
 							</TableRow>
 						))}

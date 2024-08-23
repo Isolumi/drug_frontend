@@ -13,7 +13,7 @@ import ListItemText from "@mui/material/ListItemText";
 import AccountCircle from "@mui/icons-material/AccountCircle";
 
 const drawerWidth = 240;
-const users = ["you", "me", "them"];
+const users = ["you", "me", "dummag"];
 
 export default function ClippedDrawer() {
 	return (
@@ -21,7 +21,7 @@ export default function ClippedDrawer() {
 			<CssBaseline />
 			<AppBar
 				position="fixed"
-				sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 , backgroundColor : "#c77e30"}}
+				sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 , backgroundColor : "#236db8"}}
 			>
 				<Toolbar>
 					<Typography variant="h6" noWrap component="div">
