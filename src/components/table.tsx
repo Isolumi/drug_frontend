@@ -6,6 +6,10 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
+import TextField from "@mui/material/TextField";
+import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+import { DatePicker } from "@mui/x-date-pickers/DatePicker";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 
 function createData(
 	name: string,
@@ -35,7 +39,7 @@ export default function BasicTable() {
 					position: "relative",
 					margin: "auto",
 					mt: 8,
-          ml: 0,
+					ml: 0,
 					border: "50px solid #242424",
 					backgroundColor: "#363c40",
 				}}
@@ -43,23 +47,181 @@ export default function BasicTable() {
 				<Table sx={{ maxWidth: `calc(100vw - 240px)` }}>
 					<TableHead>
 						<TableRow>
-							<TableCell sx={{ color: "#ccd5db", borderBottom: '5px solid #242424', fontSize: '1.2rem' }}>
+							<TableCell
+								sx={{
+									color: "#ccd5db",
+									borderBottom: "5px solid #242424",
+									fontSize: "1.2rem",
+								}}
+							>
 								dwug omnomnomonmonmonmonmomnn
 							</TableCell>
-							<TableCell align="right" sx={{ color: "#ccd5db", borderBottom: '5px solid #242424', fontSize: '1.2rem' }}>
+							<TableCell
+								sx={{
+									color: "#ccd5db",
+									borderBottom: "5px solid #242424",
+									fontSize: "1.2rem",
+								}}
+							>
 								Fill Date
 							</TableCell>
-							<TableCell align="right" sx={{ color: "#ccd5db", borderBottom: '5px solid #242424', fontSize: '1.2rem' }}>
+							<TableCell
+								sx={{
+									color: "#ccd5db",
+									borderBottom: "5px solid #242424",
+									fontSize: "1.2rem",
+								}}
+							>
 								Remaining Duration
 							</TableCell>
-							<TableCell align="right" sx={{ color: "#ccd5db", borderBottom: '5px solid #242424', fontSize: '1.2rem' }}>
+							<TableCell
+								sx={{
+									color: "#ccd5db",
+									borderBottom: "5px solid #242424",
+									fontSize: "1.2rem",
+								}}
+							>
 								Refill Date
 							</TableCell>
-							<TableCell align="right" sx={{ color: "#ccd5db", borderBottom: '5px solid #242424', fontSize: '1.2rem' }}>
-								
-							</TableCell>
+							<TableCell
+								align="right"
+								sx={{
+									color: "#ccd5db",
+									borderBottom: "5px solid #242424",
+									fontSize: "1.2rem",
+								}}
+							></TableCell>
 						</TableRow>
 					</TableHead>
+					<TableBody>
+						<TableRow>
+							<TableCell
+								component="th"
+								scope="row"
+								sx={{
+									color: "#ccd5db",
+									borderBottom: "5px solid #242424",
+								}}
+							>
+								<TextField
+									id="outlined-basic"
+									label="+ Drug Name..."
+									variant="outlined"
+									sx={{
+										width: "40vw",
+										"& .MuiOutlinedInput-root": {
+											"& fieldset": {
+												borderColor: "#ccd5db",
+											},
+											"&:hover fieldset": {
+												borderColor: "#ccd5db",
+											},
+											"&.Mui-focused fieldset": {
+												borderColor: "#ccd5db",
+											},
+										},
+										"& .MuiInputLabel-root": {
+											color: "#ccd5db",
+										},
+										"& .MuiInputBase-input": {
+											color: "#ccd5db",
+										},
+									}}
+								/>
+							</TableCell>
+							<TableCell
+								sx={{
+									color: "#ccd5db",
+									borderBottom: "5px solid #242424",
+								}}
+							>
+								<LocalizationProvider
+									dateAdapter={AdapterDayjs}
+								>
+									<DatePicker
+										sx={{
+											"& .MuiOutlinedInput-root": {
+												"& fieldset": {
+													borderColor: "#ccd5db",
+												},
+												"&:hover fieldset": {
+													borderColor: "#ccd5db",
+												},
+												"&.Mui-focused fieldset": {
+													borderColor: "#ccd5db",
+												},
+											},
+											"& .MuiInputLabel-root": {
+												color: "#ccd5db",
+											},
+											"& .MuiInputBase-input": {
+												color: "#ccd5db",
+											},
+											"& .MuiInputAdornment-root .MuiSvgIcon-root":
+												{
+													color: "#ccd5db",
+												},
+										}}
+									/>
+								</LocalizationProvider>
+							</TableCell>
+							<TableCell
+								sx={{
+									color: "#ccd5db",
+									borderBottom: "5px solid #242424",
+								}}
+							>
+							</TableCell>
+							<TableCell
+								sx={{
+									color: "#ccd5db",
+									borderBottom: "5px solid #242424",
+								}}
+							>
+								<LocalizationProvider
+									dateAdapter={AdapterDayjs}
+								>
+									<DatePicker
+										sx={{
+											"& .MuiOutlinedInput-root": {
+												"& fieldset": {
+													borderColor: "#ccd5db",
+												},
+												"&:hover fieldset": {
+													borderColor: "#ccd5db",
+												},
+												"&.Mui-focused fieldset": {
+													borderColor: "#ccd5db",
+												},
+											},
+											"& .MuiInputLabel-root": {
+												color: "#ccd5db",
+											},
+											"& .MuiInputBase-input": {
+												color: "#ccd5db",
+											},
+											"& .MuiInputAdornment-root .MuiSvgIcon-root":
+												{
+													color: "#ccd5db",
+												},
+										}}
+									/>
+								</LocalizationProvider>
+							</TableCell>
+							<TableCell
+								align="right"
+								sx={{
+									color: "#ccd5db",
+									borderBottom: "5px solid #242424",
+									fontSize: "1.2rem",
+								}}
+							>
+								<Button sx={{ color: "#ccd5db" }}>
+									Add Drug
+								</Button>
+							</TableCell>
+						</TableRow>
+					</TableBody>
 					<TableBody>
 						{rows.map((row) => (
 							<TableRow
@@ -73,33 +235,46 @@ export default function BasicTable() {
 								<TableCell
 									component="th"
 									scope="row"
-									sx={{ color: "#ccd5db", borderBottom: '5px solid #242424' }}
+									sx={{
+										color: "#ccd5db",
+										borderBottom: "5px solid #242424",
+									}}
 								>
 									{row.name}
 								</TableCell>
 								<TableCell
-									align="right"
-									sx={{ color: "#ccd5db", borderBottom: '5px solid #242424' }}
+									sx={{
+										color: "#ccd5db",
+										borderBottom: "5px solid #242424",
+									}}
 								>
 									{row.calories}
 								</TableCell>
 								<TableCell
-									align="right"
-									sx={{ color: "#ccd5db", borderBottom: '5px solid #242424' }}
+									sx={{
+										color: "#ccd5db",
+										borderBottom: "5px solid #242424",
+									}}
 								>
 									{row.fat}
 								</TableCell>
 								<TableCell
-									align="right"
-									sx={{ color: "#ccd5db", borderBottom: '5px solid #242424' }}
+									sx={{
+										color: "#ccd5db",
+										borderBottom: "5px solid #242424",
+									}}
 								>
 									{row.carbs}
 								</TableCell>
 								<TableCell
 									align="right"
-									sx={{ color: "#ccd5db", borderBottom: '5px solid #242424', fontSize: '1.2rem' }}
+									sx={{
+										color: "#ccd5db",
+										borderBottom: "5px solid #242424",
+										fontSize: "1.2rem",
+									}}
 								>
-									<Button sx={{color: '#ccd5db'}}>
+									<Button sx={{ color: "#ccd5db" }}>
 										Refill
 									</Button>
 								</TableCell>
