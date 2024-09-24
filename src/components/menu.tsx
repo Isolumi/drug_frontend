@@ -13,7 +13,7 @@ import ListItemText from "@mui/material/ListItemText";
 import AccountCircle from "@mui/icons-material/AccountCircle";
 
 const drawerWidth = 240;
-const users = ["you", "me", "dummag"];
+const users = ["you", "me", "that guy over there"];
 
 export default function ClippedDrawer() {
 	return (
@@ -25,7 +25,7 @@ export default function ClippedDrawer() {
 			>
 				<Toolbar>
 					<Typography variant="h6" noWrap component="div">
-						dwug hooray wahoo
+						drug hooray wahoo
 					</Typography>
 				</Toolbar>
 			</AppBar>
